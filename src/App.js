@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import sound from "./sounds/click.mp3"
+import "./App.css";
+import { React, useState } from "react";
 
-function App() {
+export default function App() {
+
+  function play(){
+    new Audio(sound).play()
+  }
+
+  const [counter, setCounter] = useState(0);
+  const upIncrement = 1;
+  const downIncrement = 1;
+  
+  //increase counter
+  const increase = () => {
+    setCounter((count) => count + upIncrement);
+  };
+
+  //decrease counter
+  const decrease = () => {
+    setCounter((count) => count - downIncrement);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="counter">
+      <h1>Counter</h1>
+      <span className="counter__output">{counter}</span>
+      <div className="btn__container">
+        <button className="control__btn" onClick={() => {play(); increase()}}>
+          Click
+        </button>
+      </div>
     </div>
   );
 }
-
-export default App;
