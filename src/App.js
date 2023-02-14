@@ -22,7 +22,6 @@ export default function App() {
 
   const [counter, setCounter] = useState(0);
   var upIncrement = 1;
-  var downIncrement = 1;
   
   //increase counter
   const increase = () => {
@@ -30,13 +29,15 @@ export default function App() {
   };
 
   //decrease counter
-  const decrease = () => {
-    setCounter((count) => count - downIncrement);
+  const decrease = (x) => {
+    setCounter((count) => count - x);
   };
 
   function getCount(){
     return counter;
   }
+
+  const [disable, setDisable] = useState(false);
 
   return (
     <div>
@@ -57,11 +58,17 @@ export default function App() {
           </button>
         </div>
       </div>
-      <div className="test">
+      <div className="ten">
         <h1>Test</h1>
-        <div className="test_container">
-          <button className="test_btn">
-           Test
+        <div className="ten_container">
+          <button className="ten_btn" disabled={disable} onClick={() => {
+            if (getCount() >= 10)
+            {
+              setDisable(true)
+              decrease(10)
+              okayPlay()
+            }}}>
+           10
           </button>
         </div>
       </div>
