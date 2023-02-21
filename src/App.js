@@ -21,11 +21,14 @@ export default function App() {
   }
 
   const [counter, setCounter] = useState(0);
-  var upIncrement = 1;
+  const [upIncrement, setUpIncrement] = useState(1);
+  
+  const [totalClicks, setTotalClicks] = useState(0);
   
   //increase counter
-  const increase = () => {
+  function increase() {
     setCounter((count) => count + upIncrement);
+    setTotalClicks((count) => count + 1);
   };
 
   //decrease counter
@@ -37,7 +40,19 @@ export default function App() {
     return counter;
   }
 
-  const [disable, setDisable] = useState(false);
+  function getTotalCount(){
+    return totalClicks;
+  }
+
+  function getUpIncrement(){
+    return upIncrement;
+  }
+
+  const [disableTen, setDisableTen] = useState(false);
+  const [disableFifty, setDisableFifty] = useState(false);
+  const [disableHundred, setDisableHundred] = useState(false);
+
+  const [trans, setTrans] = useState("red");
 
   return (
     <div>
@@ -47,7 +62,7 @@ export default function App() {
         <div className="btn__container">
           <button className="control__btn" onClick={() => {
            increase()
-            if ((getCount()+1)%50 === 0 && getCount() !== 0)
+            if ((getTotalCount()+1)%50 === 0 && getCount() !== 0)
             {
               click100Play()
             }
@@ -57,18 +72,45 @@ export default function App() {
             Click
           </button>
         </div>
+        <div className="App">
+          <div>Total Clicks: <span style={{color: '#1CDA16'}}>{getTotalCount()}</span></div>
+          <div>Multiplier: <span style={{color: 'red'}}>{getUpIncrement()}</span></div>
+          <br></br>
+        </div>
       </div>
-      <div className="ten">
-        <h1>Test</h1>
-        <div className="ten_container">
-          <button className="ten_btn" disabled={disable} onClick={() => {
+      <div className="buybtn">
+        <div className="buybtn_container">
+          <button className="ten_btn" disabled={disableTen} onClick={() => {
             if (getCount() >= 10)
             {
-              setDisable(true)
+              setDisableTen(true)
               decrease(10)
               okayPlay()
             }}}>
            10
+          </button>
+
+          <button className="fifty_btn" disabled={disableFifty} onClick={() => {
+            if (getCount() >= 50)
+            {
+              setDisableFifty(true)
+              decrease(50)
+              okayPlay()
+            }}}>
+           50
+          </button>
+
+          <button className="hundred_btn" disabled={disableHundred} onClick={() => {
+            if (getCount() >= 100)
+            {
+              setDisableHundred(true)
+              decrease(100)
+              okayPlay()
+              setUpIncrement(2);
+              setTrans("transparent")
+            }}}>
+           <div>100</div>
+           <div className="trans" style={{color: trans, fontSize: 50}}>2X</div>
           </button>
         </div>
       </div>
