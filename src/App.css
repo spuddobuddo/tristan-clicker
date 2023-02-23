@@ -140,6 +140,23 @@
   border: 1px solid rgb(16, 0, 54);
 }
 
+.fivehundred_btn{
+  font-size: 80px;
+  padding: 80px 80px;
+  background-color: black;
+  color: rgb(28, 218, 22);
+  border: 1px solid rgb(16, 0, 54);
+  cursor: pointer;
+}
+
+.fivehundred_btn:disabled{
+  background: url(./photos/image5.jpeg);
+  background-size: 100%;
+  background-position: center;
+  color: transparent;
+  border: 1px solid rgb(16, 0, 54);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
