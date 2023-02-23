@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/tristan-clicker/static/css/main.8b73aafd.css",
-    "main.js": "/tristan-clicker/static/js/main.ea96b07e.js",
+    "main.css": "/tristan-clicker/static/css/main.b30c02c8.css",
+    "main.js": "/tristan-clicker/static/js/main.9c480a1e.js",
     "static/js/787.e94947f1.chunk.js": "/tristan-clicker/static/js/787.e94947f1.chunk.js",
     "static/media/image4.jpeg": "/tristan-clicker/static/media/image4.2d9b858c6f1715cea7dd.jpeg",
     "static/media/image1.jpeg": "/tristan-clicker/static/media/image1.bffea234ba1b30d6786f.jpeg",
     "static/media/image2.jpeg": "/tristan-clicker/static/media/image2.683c3a0e251e911cc316.jpeg",
     "static/media/image3.jpeg": "/tristan-clicker/static/media/image3.b85d7dfb4421562b45ef.jpeg",
+    "static/media/image5.jpeg": "/tristan-clicker/static/media/image5.08360bbb157f44df8b0f.jpeg",
     "static/media/image0.jpeg": "/tristan-clicker/static/media/image0.03c12250a9e788dbdc08.jpeg",
     "static/media/click100.mp3": "/tristan-clicker/static/media/click100.332304961ed260a27c84.mp3",
     "static/media/OKAY.mp3": "/tristan-clicker/static/media/OKAY.7bcdbddfab3b90d95330.mp3",
     "static/media/click.mp3": "/tristan-clicker/static/media/click.0291537ce4b511af31a5.mp3",
     "index.html": "/tristan-clicker/index.html",
-    "main.8b73aafd.css.map": "/tristan-clicker/static/css/main.8b73aafd.css.map",
-    "main.ea96b07e.js.map": "/tristan-clicker/static/js/main.ea96b07e.js.map",
+    "main.b30c02c8.css.map": "/tristan-clicker/static/css/main.b30c02c8.css.map",
+    "main.9c480a1e.js.map": "/tristan-clicker/static/js/main.9c480a1e.js.map",
     "787.e94947f1.chunk.js.map": "/tristan-clicker/static/js/787.e94947f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b73aafd.css",
-    "static/js/main.ea96b07e.js"
+    "static/css/main.b30c02c8.css",
+    "static/js/main.9c480a1e.js"
   ]
 }
