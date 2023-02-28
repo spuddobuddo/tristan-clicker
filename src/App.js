@@ -59,11 +59,11 @@ export default function App() {
   const [transAuto, setTransAuto] = useState("blue");
 
   function autoClickerIncrease(){
-    setCounter((count) => count + autoClicker)
+    setCounter((count) => count + autoClicker);
   }
 
   function getAutoClickNum(){
-    return autoClicker;
+    return autoClicker-1;
   }
 
   return (
@@ -87,7 +87,7 @@ export default function App() {
         <div className="App">
           <div>Total Clicks: <span style={{color: '#1CDA16'}}>{getTotalCount()}</span></div>
           <div>Multiplier: <span style={{color: 'red'}}>{getUpIncrement()}</span></div>
-          <div>Auto Clicker: <span style={{color: 'blue'}}>{getAutoClickNum()}</span></div>
+          <div>Auto Clicker: <span style={{color: 'blue'}}>{getAutoClickNum()} </span></div>
           <br></br>
         </div>
       </div>
@@ -127,7 +127,7 @@ export default function App() {
           </button>
 
           <button className="fivehundred_btn" disabled={disableFivehundred} onClick={() => {
-            if (getCount() >= 5)
+            if (getCount() >= 500)
             {
               setDisableFivehundred(true)
               decrease(500)
