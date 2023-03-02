@@ -1,11 +1,15 @@
+import "./App.css";
+import { React, useState } from "react";
+import Popup from './Popup';
+
 import clickSound from "./sounds/click.mp3"
 import okaySound from "./sounds/OKAY.mp3"
 import click100Sound from "./sounds/click100.mp3"
 
-import image1 from "./photos/image1.jpeg"
+import spySound1 from "./sounds/Spy_no01.wav"
+import spySound2 from "./sounds/Spy_no02.wav"
+import spySound3 from "./sounds/Spy_no03.wav"
 
-import "./App.css";
-import { React, useState } from "react";
 export default function App() {
 
   function clickPlay(){
@@ -65,11 +69,42 @@ export default function App() {
   function getAutoClickNum(){
     return autoClicker-1;
   }
+  
+  const [quote, setQuote] = useState('');
+
+  const getQuote = () => {
+    fetch("https://type.fit/api/quotes")
+      .then(res => res.json())
+      .then((data) => {
+        let randomNum = Math.floor(Math.random()*data.length);
+        setQuote(data[randomNum]);
+      })
+  }
+
+  function popUpBoth(){
+    setButtonPopup(true)
+    getQuote()
+  }
+
+  const [buttonPopup, setButtonPopup] = useState(false);
+
+  function playRandSpySound(){
+    var randNum = Math.random()*3;
+    if(randNum === 0){
+      new Audio(spySound1).play()
+    }
+    else if (randNum === 1){
+      new Audio(spySound2).play()
+    }
+    else{
+      new Audio(spySound3).play()
+    }
+  }
 
   return (
     <div>
       <div className="counter">
-        <h1>Counter</h1>
+        <h1>Tristán Clicker</h1>
         <span className="counter__output">{counter}</span>
         <div className="btn__container">
           <button className="control__btn" onClick={() => {
@@ -99,6 +134,10 @@ export default function App() {
               setDisableTen(true)
               decrease(10)
               okayPlay()
+              popUpBoth()
+            }
+            else{
+              playRandSpySound()
             }}}>
            10
           </button>
@@ -109,6 +148,7 @@ export default function App() {
               setDisableFifty(true)
               decrease(50)
               okayPlay()
+              popUpBoth();
             }}}>
            50
           </button>
@@ -121,6 +161,7 @@ export default function App() {
               okayPlay()
               setUpIncrement(2);
               setTransMulti("transparent")
+              popUpBoth();
             }}}>
            <div>100</div>
            <div className="transMulti" style={{color: transMulti, fontSize: 50}}>2X</div>
@@ -134,13 +175,17 @@ export default function App() {
               okayPlay()
               setTransAuto("transparent")
               setInterval(() => {autoClickerIncrease()}, 1000)
+              popUpBoth();
             }}}>
            <div>500</div>
            <div className="transAuto" style={{color: transAuto, fontSize: 50}}>Auto</div>
           </button>
-
         </div>
       </div>
+      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+        <h3>"{quote.text}"</h3>
+        <h4>-Tristán Howard-Ron</h4>
+      </Popup>
     </div>
   );
 }
