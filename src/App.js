@@ -24,6 +24,17 @@ export default function App() {
     new Audio(okaySound).play()
   }
 
+  function spySound1Play(){
+    new Audio(spySound1).play()
+  }
+  
+  function spySound2Play(){
+    new Audio(spySound2).play()
+  }
+  function spySound3Play(){
+    new Audio(spySound3).play()
+  }
+
   const [counter, setCounter] = useState(0);
   const [upIncrement, setUpIncrement] = useState(1);
   
@@ -86,20 +97,23 @@ export default function App() {
     getQuote()
   }
 
-  const [buttonPopup, setButtonPopup] = useState(false);
-
-  function playRandSpySound(){
-    var randNum = Math.random()*3;
-    if(randNum === 0){
-      new Audio(spySound1).play()
+  function randSpySound(){
+    var randNum = Math.floor(Math.random()*3);
+    if (randNum === 0)
+    {
+      spySound1Play();
     }
-    else if (randNum === 1){
-      new Audio(spySound2).play()
+    else if (randNum === 1)
+    {
+      spySound2Play();
     }
-    else{
-      new Audio(spySound3).play()
+    else
+    {
+      spySound3Play();
     }
   }
+
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   return (
     <div>
@@ -137,7 +151,7 @@ export default function App() {
               popUpBoth()
             }
             else{
-              playRandSpySound()
+              randSpySound()
             }}}>
            10
           </button>
