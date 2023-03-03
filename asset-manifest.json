@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tristan-clicker/static/css/main.557a690f.css",
-    "main.js": "/tristan-clicker/static/js/main.18efbc71.js",
+    "main.js": "/tristan-clicker/static/js/main.3db9d3b8.js",
     "static/js/787.e94947f1.chunk.js": "/tristan-clicker/static/js/787.e94947f1.chunk.js",
     "static/media/image4.jpeg": "/tristan-clicker/static/media/image4.2d9b858c6f1715cea7dd.jpeg",
     "static/media/image2.jpeg": "/tristan-clicker/static/media/image2.683c3a0e251e911cc316.jpeg",
@@ -16,11 +16,11 @@
     "static/media/click.mp3": "/tristan-clicker/static/media/click.0291537ce4b511af31a5.mp3",
     "index.html": "/tristan-clicker/index.html",
     "main.557a690f.css.map": "/tristan-clicker/static/css/main.557a690f.css.map",
-    "main.18efbc71.js.map": "/tristan-clicker/static/js/main.18efbc71.js.map",
+    "main.3db9d3b8.js.map": "/tristan-clicker/static/js/main.3db9d3b8.js.map",
     "787.e94947f1.chunk.js.map": "/tristan-clicker/static/js/787.e94947f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.557a690f.css",
-    "static/js/main.18efbc71.js"
+    "static/js/main.3db9d3b8.js"
   ]
 }
