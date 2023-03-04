@@ -78,7 +78,7 @@ export default function App() {
   }
 
   function getAutoClickNum(){
-    return autoClicker-1;
+    return autoClicker;
   }
   
   const [quote, setQuote] = useState('');
@@ -114,6 +114,17 @@ export default function App() {
   }
 
   const [buttonPopup, setButtonPopup] = useState(false);
+  
+  const [check500, setCheck500] = useState(false);
+  function displayAuto(){
+    if(check500)
+    {
+      return getAutoClickNum();
+    }
+    else{
+      return "DISABLED"
+    }
+  }
 
   return (
     <div>
@@ -136,7 +147,7 @@ export default function App() {
         <div className="App">
           <div>Total Clicks: <span style={{color: '#1CDA16'}}>{getTotalCount()}</span></div>
           <div>Multiplier: <span style={{color: 'red'}}>{getUpIncrement()}</span></div>
-          <div>Auto Clicker: <span style={{color: 'blue'}}>{getAutoClickNum()} </span></div>
+          <div>Auto Clicker: <span style={{color: 'blue'}}>{displayAuto()} </span></div>
           <br></br>
         </div>
       </div>
@@ -163,6 +174,9 @@ export default function App() {
               decrease(50)
               okayPlay()
               popUpBoth();
+            }
+            else{
+              randSpySound()
             }}}>
            50
           </button>
@@ -176,6 +190,9 @@ export default function App() {
               setUpIncrement(2);
               setTransMulti("transparent")
               popUpBoth();
+            }
+            else{
+              randSpySound()
             }}}>
            <div>100</div>
            <div className="transMulti" style={{color: transMulti, fontSize: 50}}>2X</div>
@@ -189,7 +206,11 @@ export default function App() {
               okayPlay()
               setTransAuto("transparent")
               setInterval(() => {autoClickerIncrease()}, 1000)
-              popUpBoth();
+              popUpBoth()
+              setCheck500(true)
+            }
+            else{
+              randSpySound()
             }}}>
            <div>500</div>
            <div className="transAuto" style={{color: transAuto, fontSize: 50}}>Auto</div>
